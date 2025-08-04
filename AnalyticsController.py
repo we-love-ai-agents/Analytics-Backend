@@ -4,8 +4,8 @@ import boto3
 
 app = FastAPI()
 
-dynamodb = boto3.resource('dynamodb', region_name='ap-south-1')
-table = dynamodb.Table('your_table_name')
+dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
+table = dynamodb.Table('AbandonedBag')
 
 @app.get("/getItems")
 def get_items(limit: int = Query(10), last_key: Optional[str] = None):
